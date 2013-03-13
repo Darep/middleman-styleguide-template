@@ -12,6 +12,18 @@
     <%= javascript_include_tag "all" %>
 </head>
 <body class="<%= page_classes %>">
+    <header class="dgl-header">
+        <div class="dgl-wrapper">
+            <div class="dgl-logo">
+                <img src="" alt="" />
+            </div>
+            <ul class="nav">
+                <li class="act">Front page</li>
+            </ul>
+        </div>
+    </header>
+
+
     <%= yield %>
 </body>
 </html>
