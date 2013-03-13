@@ -21,7 +21,7 @@ And start Middleman:
 
 	middleman
 
-Finally, start working on your styleguide!
+Now you can start working on your styleguide!
 
 ## License
 
