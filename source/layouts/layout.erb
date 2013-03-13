@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title><%= data.page.title || "Styleguide" %></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-title" content="Styleguide">
+    <meta name="author" content="Your Company Name">
+
+    <%= stylesheet_link_tag "all" %>
+    <%= javascript_include_tag "all" %>
+</head>
+<body class="<%= page_classes %>">
+    <%= yield %>
+</body>
+</html>
