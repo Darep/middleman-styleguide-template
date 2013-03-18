@@ -17,7 +17,7 @@ module Helpers
 
     @styleguide = request[:styleguide]
 
-    tile_file = "#{tile}.html.erb"
+    tile_file = "_#{tile}.html.erb"
     # TODO: can we get this path dynamically somehow? lose the magic strings?
     tile_path = File.join(self.source_dir, "styleblocks", tile_file)
     @block_html = File.read(tile_path)

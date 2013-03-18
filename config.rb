@@ -4,8 +4,8 @@ set :images_dir, 'images'
 
 activate :directory_indexes
 
-# KSS
-@styleguide = Kss::Parser.new('source/stylesheets/external')
+# Middleman navigation
+activate :navigation
 
 # Markdown in KSS
 require 'redcarpet'
