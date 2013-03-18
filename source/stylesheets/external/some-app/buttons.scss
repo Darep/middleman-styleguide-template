@@ -1,30 +1,32 @@
+@import "compass/css3";
+
+
 // Good ol' button for the site
 //
 // :hover         - Yes, you can press this button
 // :active, .act  - You are pushing me.
 // :disabled, .disabled  - Don't touch this
 //
-// Styleguide 1.1
+// Styleguide 1.1.
 [type=submit], .btn {
     background: #fafafa;
-    // Use Compass's CSS3 extension
     @include background-image(linear-gradient(top, #fff, #e6e6e6));
     border: 1em/(16*0.875) solid #bdbdbd;
     border-color: #cecece #bdbdbd #aeaeae;
+    border-radius: 3px;
     color: #707070;
     cursor: pointer;
 
     display: inline-block;
     font-family: inherit;
     font-size: 0.875em;
-    line-height: $baseline;
+    line-height: 24px;
     font-weight: 700;
-    margin: 0 0 $baseline;
-    padding: ($baseline - 1)/4 1.25em; // minus because of the border
+    margin: 0 0 24px;
+    padding: 6px 1.25em;
     text-decoration:none;
     text-shadow: 0 1px 0 #fff;
-
-    border-radius: 3px;
+    -webkit-appearance: none;
 
     @include transition(border 125ms, box-shadow 125ms);
 
@@ -35,15 +37,8 @@
     }
     &:active, &.act {
         background: #ddd;
-        // Example of what Compass's CSS3 background-image extension will output
-        background-image: -webkit-linear-gradient(top, #d1d1d1, #f1f1f1);
-        background-image: -moz-linear-gradient(top, #d1d1d1, #f1f1f1);
-        background-image: -o-linear-gradient(top, #d1d1d1, #f1f1f1);
-        background-image: -ms-linear-gradient(top, #d1d1d1, #f1f1f1);
-        background-image: linear-gradient(top, #d1d1d1, #f1f1f1);
-        // Example of what Compass's CSS3 box-shadow extension will output
-        -webkit-box-shadow:inset 0 -1px 4px rgba(0,0,0, 0.15), inset 0 2px 1px rgba(0,0,0, 0.15);
-        box-shadow:inset 0 -1px 4px rgba(0,0,0, 0.15), inset 0 2px 1px rgba(0,0,0, 0.15);
+        @include background-image(linear-gradient(top, #d1d1d1, #f1f1f1));
+        @include box-shadow(inset 0 -1px 4px rgba(0,0,0, 0.15), inset 0 2px 1px rgba(0,0,0, 0.15));
     }
 
     &:disabled, &[disabled=disabled], &.disabled,
