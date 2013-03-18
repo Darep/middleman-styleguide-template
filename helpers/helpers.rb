@@ -21,7 +21,6 @@ module Helpers
     # TODO: can we get this path dynamically somehow? lose the magic strings?
     tile_path = File.join(self.source_dir, "styleblocks", tile_file)
     @block_html = File.read(tile_path)
-    #engine = File.extname(tile_file)[1..-1].to_sym
 
     if options.has_key?(:section)
       @section = @styleguide.section(options[:section])
@@ -29,7 +28,8 @@ module Helpers
       styleguide_block_path = File.join(self.source_dir, "partials", "_styleguide_block.html.erb")
       render_individual_file(styleguide_block_path)
     else
-      render_individual_file(tile_path)
+      return @block_html.gsub('$modifier_class', '').gsub(' class=""', '')
+      #render_individual_file(@block_html)
     end
   end
 

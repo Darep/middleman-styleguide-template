@@ -21,7 +21,11 @@
     </div>
   <% end %>
   <div class="styleguide-html">
-    <%= h @block_html.gsub('$modifier_class', '').gsub(' class=""', '') %>
+    <pre>
+      <code class="language-markup">
+<%= h @block_html.gsub('$modifier_class', '').gsub(' class=""', '') %>
+      </code>
+    </pre>
   </div>
 
 </div>
