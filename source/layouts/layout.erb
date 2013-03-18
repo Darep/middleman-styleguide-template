@@ -17,11 +17,15 @@
             <div class="dgl-logo">
                 <img src="" alt="" />
             </div>
-            <%= render_navigation %>
+            <div class="dgl-nav">
+                <%= render_navigation %>
+            </div>
         </div>
     </header>
-
-
-    <%= yield %>
+    <div class="dgl-wrapper">
+        <div class="dgl-main">
+            <%= yield %>
+        </div>
+    </div>
 </body>
 </html>

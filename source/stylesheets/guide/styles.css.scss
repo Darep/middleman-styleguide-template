@@ -1,2 +1,172 @@
-@import "vendor/prism";
+@import "compass/css3";
 @import "partials/reset";
+@import "vendor/prism";
+@import "theme";
+
+
+@function em($pixels, $context: 16) {
+    @return ($pixels/$context)+0em;
+}
+
+
+/* Base */
+
+body {
+    background: #eee;
+    font: 100%/1.5 $font-body;
+}
+
+.dgl-wrapper {
+    margin: 0 auto;
+    max-width: 940px;
+}
+
+
+/* Typography */
+
+h1 {
+    font-size: 2.25em;
+    margin-bottom: em(24, 2.25*16);
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: em(24, 1.5*16);
+}
+
+/* Header */
+
+.dgl-header {
+    @include background(linear-gradient(top, #3e3e3e, #2e2e2e));
+    color: #fff;
+    padding: em(12);
+}
+
+.dgl-logo {
+    float: left;
+}
+
+.dgl-nav {
+    ul {
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    li {
+        display: inline;
+        margin-right: em(12);
+    }
+
+    a {
+        color: #ccc;
+        display: inline-block;
+        text-decoration: none;
+
+        &.selected, &:hover {
+            color: #fff;
+        }
+    }
+}
+
+
+/* Main */
+
+.dgl-main {
+    background: #fff;
+    margin: em(24) 0 0;
+    padding: em(12);
+
+    > {
+        p, ul {
+            margin-bottom: em(24);
+        }
+    }
+}
+
+
+/* Styleguide block */
+
+.styleguide-example {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid #ddd;
+    margin: 15px 0;
+
+    > h3 {
+        background: #333;
+        border-top: 1px solid #000;
+        color: #fff;
+        font-size: 12px;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 5px;
+
+        em {
+            float: right;
+            text-transform: none;
+            font-style: normal;
+            font-weight: normal;
+            color: #999;
+        }
+    }
+
+    .styleguide-description {
+        background: #f1f1f1;
+        border-bottom: 1px solid #ddd;
+        font-size: em(14);
+        padding: em(12);
+
+        p:first-child {
+            margin-top: 0;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .styleguide-element {
+        position: relative;
+        padding: em(12);
+    }
+
+    .styleguide-element + .styleguide-element {
+        border-top: 1px solid #eee;
+        margin-top: em(2);
+        padding-top: em(10);
+    }
+}
+  .styleguide-example .styleguide-element .styleguide-modifier-name {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 8px;
+    font-size: 11px;
+    color: #999;
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    border-top: none; }
+.styleguide-html {
+    border-top: 1px solid #dde7ea;
+    overflow: auto;
+
+    pre {
+        margin: 0;
+        font-size: em(14);
+        line-height: em(17.5);
+    }
+
+    code {
+    }
+}
+  .styleguide-example ul.styleguide-modifiers {
+    margin: 0 0 0 10px; }
+    .styleguide-example ul.styleguide-modifiers li {
+      list-style-type: none;
+      margin-left: 0; }
+    .styleguide-example ul.styleguide-modifiers li strong {
+      font-family: Monaco, monospace;
+      font-size: 12px;
+      font-weight: normal;
+      color: #222; }
