@@ -6,7 +6,7 @@ Middleman styleguide template is a starting point for building a static HTML sty
 
 Clone the repository:
 
-	git clone git@github.com:Darep/middleman-styleguide-template.git
+	git clone git://github.com/Darep/middleman-styleguide-template.git
 
 And remove the .git directory
 
