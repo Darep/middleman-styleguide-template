@@ -75,7 +75,7 @@ h2 {
 .dgl-main {
     background: #fff;
     margin: em(24) 0 0;
-    padding: em(12);
+    padding: em(24);
 
     > {
         p, ul {
@@ -155,9 +155,6 @@ h2 {
         margin: 0;
         font-size: em(14);
         line-height: em(17.5);
-    }
-
-    code {
     }
 }
   .styleguide-example ul.styleguide-modifiers {
