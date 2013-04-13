@@ -23,6 +23,22 @@ And start Middleman:
 
 Now you can start working on your styleguide!
 
+## Usage
+
+Place the CSS/SCSS/SASS/Less with KSS comments into `source/stylesheets/external/`. The template will parse the KSS.
+
+Then add the HTML required to render the style block(s) into `source/styleblocks`. Style block templates need to start with an _, e.g. _buttons.html.erb.
+
+After this, you can render a style block on any page and anywhere by writing:
+
+	<%= styleblock 'buttons', section: '1.1' %>
+
+If you don't want to add the KSS information to the style block, and simply just render the HTML in the template file, leave the section parameter out:
+
+	<%= styleblock 'buttons' %>
+
+See [source/index.html.erb](https://github.com/Darep/middleman-styleguide-template/blob/master/source/index.html.erb), [source/styleguide.erb](https://github.com/Darep/middleman-styleguide-template/blob/master/source/styleguide.erb) and [source/styleblocks/_buttons.html.erb](https://github.com/Darep/middleman-styleguide-template/blob/master/source/styleblocks/_buttons.html.erb) for exmaples! 
+
 ## License
 
 Licensed under the MIT license.
