@@ -29,7 +29,7 @@ Place the CSS/SCSS/SASS/Less with KSS comments into `source/stylesheets/external
 
 Then add the HTML required to render the style block(s) into `source/styleblocks`. Style block templates need to start with an _, e.g. _buttons.html.erb.
 
-After this, you can render a style block on any page and anywhere by writing:
+After this, you can render a style block on any page and anywhere by writing something like:
 
 	<%= styleblock 'buttons', section: '1.1' %>
 
