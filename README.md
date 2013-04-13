@@ -25,7 +25,7 @@ Now you can start working on your styleguide!
 
 ## Usage
 
-Place the CSS/SCSS/SASS/Less with KSS comments into `source/stylesheets/external/`. The template will parse the KSS.
+Place the CSS/SCSS/SASS/Less with KSS comments into `source/stylesheets/external/`.
 
 Then add the HTML required to render the style block(s) into `source/styleblocks`. Style block templates need to start with an _, e.g. _buttons.html.erb.
 
