@@ -2,19 +2,15 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
+# KSS
+require 'lib/kss'
+activate :kss, :kss_dir => 'source/stylesheets/external'
+
+# Clean URLs
 activate :directory_indexes
 
 # Middleman navigation
 activate :navigation
-
-# Markdown in KSS
-require 'redcarpet'
-helpers do
-  def markdown(input)
-    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true)
-    markdown.render(input)
-  end
-end
 
 # Build-specific configuration
 configure :build do
