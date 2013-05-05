@@ -2,15 +2,15 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
-# KSS
-require 'lib/kss'
-activate :kss, :kss_dir => 'source/stylesheets/external'
-
 # Clean URLs
 activate :directory_indexes
 
 # Middleman navigation
 activate :navigation
+
+# KSS helpers
+set :markdown_engine, :redcarpet
+activate :kss, :kss_dir => 'stylesheets/external'
 
 # Build-specific configuration
 configure :build do
