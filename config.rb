@@ -1,6 +1,6 @@
-set :css_dir, 'stylesheets'
-set :js_dir, 'javascripts'
-set :images_dir, 'images'
+set :css_dir, 'guide-assets/stylesheets'
+set :js_dir, 'guide-assets/javascripts'
+set :images_dir, 'guide-assets/images'
 
 # Clean URLs
 activate :directory_indexes
@@ -10,7 +10,7 @@ activate :navigation
 
 # KSS helpers
 set :markdown_engine, :redcarpet
-activate :kss, :kss_dir => 'stylesheets/external'
+activate :kss, :kss_dir => 'guide-assets/stylesheets/external'
 
 # Build-specific configuration
 configure :build do

@@ -3,9 +3,20 @@
 @import "vendor/prism";
 @import "theme";
 
-
+// Pixels to em
 @function em($pixels, $context: 16) {
     @return ($pixels/$context)+0em;
+}
+
+// Variables
+$max-width: em(1000);
+
+@mixin big-screen() {
+    @media screen and (min-width: $max-width) { @content; }
+}
+
+@mixin tablet() {
+    @media screen and (min-width: 800px) { @content; }
 }
 
 
@@ -13,12 +24,35 @@
 
 body {
     background: #eee;
-    font: 100%/1.5 $font-body;
+    font: 75%/1.5 $font-body;
+    padding-top: em(72);  // create some space for the fixed header
+
+    @include tablet {
+        font-size: 87.5%;
+    }
+
+    @include big-screen {
+        font-size: 100%;
+    }
 }
 
 .dgl-wrapper {
     margin: 0 auto;
-    max-width: 940px;
+    max-width: $max-width;
+    padding: 0 10px;
+    position: relative;
+}
+
+.clearfix {
+    *zoom: 1;
+
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
 }
 
 
@@ -30,16 +64,28 @@ h1 {
 }
 
 h2 {
+    border-bottom: 1px solid $color-accent;
     font-size: 1.5em;
     margin-bottom: em(24, 1.5*16);
 }
 
+h3 {
+    font-size: 1.25em;
+    margin-bottom: em(24, 1.25*16);
+}
+
+
 /* Header */
 
 .dgl-header {
-    @include background(linear-gradient(top, #3e3e3e, #2e2e2e));
+    @include background($header-background);
     color: #fff;
     padding: em(12);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 3;
 }
 
 .dgl-logo {
@@ -59,12 +105,12 @@ h2 {
     }
 
     a {
-        color: #ccc;
+        color: $header-link-color;
         display: inline-block;
         text-decoration: none;
 
         &.selected, &:hover {
-            color: #fff;
+            color: $header-active-link-color;
         }
     }
 }
@@ -72,16 +118,79 @@ h2 {
 
 /* Main */
 
+.dgl-row {
+    position: relative;
+    @extend .clearfix;
+}
+
 .dgl-main {
     background: #fff;
-    margin: em(24) 0 0;
     padding: em(24);
 
+    @include tablet {
+        float: right;
+        width: 70%;
+    }
+
     > {
-        p, ul {
+        p, ul, ol {
             margin-bottom: em(24);
         }
     }
+}
+
+.dgl-main, .dgl-sidebar {
+    @include box-shadow(0 1px 4px rgba(0, 0, 0, 0.065));
+}
+
+
+/* Side panel */
+
+.dgl-sidebar {
+    margin-bottom: em(24);
+
+    @include tablet {
+        float: left;
+        position: fixed;
+        width: em(200);
+    }
+
+    @include big-screen {
+        width: em(220);
+    }
+
+    ul {
+        background-color: #fff;
+        padding: 0;
+        @include background-clip(padding-box);
+    }
+
+    li {
+        line-height: em(20);
+        list-style: none;
+    }
+
+    a {
+        border: 1px solid #e5e5e5;
+        color: $color-link;
+        display: block;
+        margin-bottom: -1px;
+        padding: em(8) em(14);
+        text-decoration: none;
+        width: 100%;
+        @include box-sizing(border-box);
+    }
+}
+
+
+/* Page content */
+
+.dgl-main > p > img {
+    background: #fff;
+    border: 1px solid #f1f1f1;
+    padding: em(12);
+    @include box-shadow(0 2px 12px rgba(0, 0, 0, 0.1));
+    @include box-sizing(border-box);
 }
 
 
