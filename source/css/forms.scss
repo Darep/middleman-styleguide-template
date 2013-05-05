@@ -1,0 +1,54 @@
+@import "compass/css3";
+
+
+// Text fields
+//
+// :hover   - Subtle hover style
+// :focus   - Tell the user "Hello, you've selected me!"
+//
+// Styleguide 2.1
+[type="text"], [type="password"], textarea {
+    background: #fff;
+    border: em(1, 14) solid #c9c9c9;
+    border-radius: 3px;
+    font-size: em(14);
+    margin:0 0 $baseline;
+    outline: 0;
+    padding: em(6) em(6);
+
+    @include transition(border 125ms ease);
+    @include box-shadow(inset 0 2px 3px rgba(0, 0, 0, .08), 0 1px 0 #fff);
+
+    &:hover {
+        border-color:#b5b5b5;
+    }
+
+    &:focus {
+        border-color: #17c;
+        @include box-shadow(inset 0 2px 4px rgba(0, 0, 0, .2), 0 1px 0 #fff);
+    }
+}
+
+
+// Search field
+//
+// Styleguide 2.2
+.site-search {
+    background: url('../images/search.png');
+}
+
+
+// Standard drop-down
+//
+// Styleguide 2.3
+select {
+    margin: 0 0 $baseline;
+}
+
+
+// Standard checkbox
+//
+// Styleguide 2.4
+[type="checkbox"] {
+    margin: 0 0 $baseline;
+}

@@ -8,8 +8,12 @@
     <meta name="apple-mobile-web-app-title" content="Styleguide">
     <meta name="author" content="Your Company Name">
 
-    <%= stylesheet_link_tag "all" %>
-    <%= javascript_include_tag "all" %>
+    <!-- External stylesheet: -->
+    <%= stylesheet_link_tag 'css/styles' %>
+
+    <!-- Guide assets -->
+    <%= stylesheet_link_tag 'guide' %>
+    <%= javascript_include_tag 'all' %>
 </head>
 <body class="<%= page_classes %>" data-spy="scroll" data-target=".dgl-sidebar">
     <header class="dgl-header">

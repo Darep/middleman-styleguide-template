@@ -10,7 +10,7 @@ activate :navigation
 
 # KSS helpers
 set :markdown_engine, :redcarpet
-activate :kss, :kss_dir => 'guide-assets/stylesheets/external'
+activate :kss, :kss_dir => 'css'
 
 # Build-specific configuration
 configure :build do
