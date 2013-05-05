@@ -11,11 +11,11 @@
     <%= stylesheet_link_tag "all" %>
     <%= javascript_include_tag "all" %>
 </head>
-<body class="<%= page_classes %>">
+<body class="<%= page_classes %>" data-spy="scroll" data-target=".dgl-sidebar">
     <header class="dgl-header">
         <div class="dgl-wrapper">
             <div class="dgl-logo">
-                <img src="" alt="" />
+                <!-- styleguide logo here -->
             </div>
             <div class="dgl-nav">
                 <%= render_navigation %>
@@ -23,8 +23,13 @@
         </div>
     </header>
     <div class="dgl-wrapper">
-        <div class="dgl-main">
-            <%= yield %>
+        <div class="dgl-row">
+            <div class="dgl-sidebar dgl-sticky-nav">
+                <!-- Sidebar here -->
+            </div>
+            <div class="dgl-main">
+                <%= yield %>
+            </div>
         </div>
     </div>
 </body>
