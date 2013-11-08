@@ -5,9 +5,6 @@ set :images_dir, 'guide-assets/images'
 # Clean URLs
 activate :directory_indexes
 
-# Middleman navigation
-activate :navigation
-
 # KSS helpers
 set :markdown_engine, :redcarpet
 activate :kss, :kss_dir => 'guide-assets/stylesheets/external'
